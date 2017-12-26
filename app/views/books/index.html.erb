@@ -2,6 +2,7 @@
 
 <h1>Books</h1>
 
+
 <table class="w3-table">
   <thead>
     <tr>
@@ -31,3 +32,12 @@
 <br>
 
 <%= link_to t(:new), new_book_path, remote: true %>
+
+
+<div>
+  <%= pie_chart @books.group(:book_category).count, id: "category-chart", label: proc{|book| book.book_category.name} %>
+</div>
+
+<div>
+  <%= pie_chart @books.group(:book_format).count, id: "format-chart", label: proc{|book| book.book_format.name} %>
+</div>

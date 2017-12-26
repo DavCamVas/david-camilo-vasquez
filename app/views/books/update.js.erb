@@ -1,3 +1,9 @@
 $("#book-form-container").html("");
 $("#book-form-modal").hide();
 $("<%="#book_#{@book.id}"%>").replaceWith("<%= escape_javascript(render "row", book: @book)%>");
+
+var categoryChart = Chartkick.charts["category-chart"];
+var formatChart = Chartkick.charts["format-chart"];
+
+categoryChart.redraw();
+formatChart.redraw();

@@ -8,6 +8,8 @@ gem 'rails', '5.0.0'
 gem 'devise'
 gem 'pg'
 
+gem "chartkick"
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
