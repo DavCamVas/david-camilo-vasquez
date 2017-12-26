@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Books</h1>
+
+<table class="w3-table">
+  <thead>
+    <tr>
+      <th><%= t(:name)%></th>
+      <th><%= t(:price) %></th>
+      <th><%= t(:category) %></th>
+      <th><%= t(:format) %></th>
+      <th><%= t(:options) %></th>
+    </tr>
+  </thead>
+
+  <tbody id="books-tbody">
+    <% @books.each do |book| %>
+      <%= render "row", book: book %>
+    <% end %>
+  </tbody>
+</table>
+
+<div id="book-form-modal" class="w3-modal">
+  <div class="w3-modal-content">
+    <div id="book-form-container" class="w3-container">
+       
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to t(:new), new_book_path, remote: true %>

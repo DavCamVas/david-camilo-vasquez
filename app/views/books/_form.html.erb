@@ -1,0 +1,15 @@
+<%= simple_form_for(@book, remote: true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.association :book_category %>
+    <%= f.association :book_format %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= button_tag t(:cancel), type: "button", class: "cancel-btn" %>
+  </div>
+<% end %>
